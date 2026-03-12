@@ -13,15 +13,6 @@ class Rightsignals < Formula
         bin.install "rightsignals-darwin-arm64" => "rightsignals"
       end
     end
-
-    on_intel do
-      url "https://github.com/aluminumio/rightsignals-cli/releases/download/v#{version}/rightsignals-darwin-amd64"
-      sha256 "PLACEHOLDER"
-
-      def install
-        bin.install "rightsignals-darwin-amd64" => "rightsignals"
-      end
-    end
   end
 
   on_linux do

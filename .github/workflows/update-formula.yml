@@ -10,21 +10,19 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Download release artifacts and update formula
         env:
           GH_TOKEN: ${{ secrets.REPO_DISPATCH_TOKEN }}
           VERSION: ${{ github.event.client_payload.version }}
         run: |
-          for artifact in rightsignals-darwin-arm64 rightsignals-darwin-amd64 rightsignals-linux-amd64; do
+          for artifact in rightsignals-darwin-arm64 rightsignals-linux-amd64; do
             url="https://github.com/aluminumio/rightsignals-cli/releases/download/v${VERSION}/${artifact}"
             curl -sL "$url" -o "/tmp/${artifact}"
             sha=$(sha256sum "/tmp/${artifact}" | awk '{print $1}')
-            # Update the sha256 for this artifact in the formula
             sed -i "/${artifact}/{ n; s/sha256 \".*\"/sha256 \"${sha}\"/; }" Formula/rightsignals.rb
           done
-          # Update version
           sed -i "s/version \".*\"/version \"${VERSION}\"/" Formula/rightsignals.rb
 
       - name: Commit and push
