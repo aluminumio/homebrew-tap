@@ -1,0 +1,36 @@
+name: Update formula on CLI release
+
+on:
+  repository_dispatch:
+    types: [cli-released]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download release artifacts and update formula
+        env:
+          GH_TOKEN: ${{ secrets.REPO_DISPATCH_TOKEN }}
+          VERSION: ${{ github.event.client_payload.version }}
+        run: |
+          for artifact in rightsignals-darwin-arm64 rightsignals-darwin-amd64 rightsignals-linux-amd64; do
+            url="https://github.com/aluminumio/rightsignals-cli/releases/download/v${VERSION}/${artifact}"
+            curl -sL "$url" -o "/tmp/${artifact}"
+            sha=$(sha256sum "/tmp/${artifact}" | awk '{print $1}')
+            # Update the sha256 for this artifact in the formula
+            sed -i "/${artifact}/{ n; s/sha256 \".*\"/sha256 \"${sha}\"/; }" Formula/rightsignals.rb
+          done
+          # Update version
+          sed -i "s/version \".*\"/version \"${VERSION}\"/" Formula/rightsignals.rb
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Formula/rightsignals.rb
+          git commit -m "Update rightsignals to v${{ github.event.client_payload.version }}" || exit 0
+          git push
