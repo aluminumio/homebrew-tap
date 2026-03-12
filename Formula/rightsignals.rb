@@ -1,13 +1,13 @@
 class Rightsignals < Formula
   desc "CLI for RightSignals — query traces, issues, occurrences and events"
   homepage "https://github.com/aluminumio/rightsignals-cli"
-  version "0.2.2"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/aluminumio/rightsignals-cli/releases/download/v#{version}/rightsignals-darwin-arm64"
-      sha256 "c923019bf820c5945da79363b7f481a0209b37e5d634e665d78319b7d4ccdec4"
+      sha256 "892e8850227f5da96029b26df581f6f66a44ac135d10d33e9b5ac9d772401856"
 
       def install
         bin.install "rightsignals-darwin-arm64" => "rightsignals"
@@ -18,7 +18,7 @@ class Rightsignals < Formula
   on_linux do
     on_intel do
       url "https://github.com/aluminumio/rightsignals-cli/releases/download/v#{version}/rightsignals-linux-amd64"
-      sha256 "1ce4bb558758c94824e8b4201529608e4fd06fb3f6e4054768fd01190f835b64"
+      sha256 "98cb90c477b0cba6f9fdfaba61dc65b4b1619ad094ae4355539ab275af72b532"
 
       def install
         bin.install "rightsignals-linux-amd64" => "rightsignals"
