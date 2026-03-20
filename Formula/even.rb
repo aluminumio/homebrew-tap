@@ -3,7 +3,7 @@ class Even < Formula
   homepage "https://github.com/aluminumio/even"
   url "https://github.com/aluminumio/even/releases/latest/download/even-macos.tar.gz"
   version "0.1.0"
-  sha256 "fcd5f4b4851563369ee5905e02b861c856ec3d40535cec5771b14028a1deb4cf"
+  sha256 "3cfd9c9c03df9cdecf900175387444bb0d56df2b410e4eae9811c21b246fd6e3"
   license "MIT"
 
   depends_on :macos
