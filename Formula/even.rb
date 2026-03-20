@@ -2,8 +2,8 @@ class Even < Formula
   desc "CLI to send text to Even Realities G2 smart glasses over Bluetooth"
   homepage "https://github.com/aluminumio/even"
   url "https://github.com/aluminumio/even/releases/latest/download/even-macos.tar.gz"
-  version "0.1.0"
-  sha256 "3cfd9c9c03df9cdecf900175387444bb0d56df2b410e4eae9811c21b246fd6e3"
+  version "0.2.0"
+  sha256 "153d647362b73f8adb0e92ec225338086a231c3195b2e0ed9bc12fa9a4588723"
   license "MIT"
 
   depends_on :macos
