@@ -18,9 +18,9 @@ jobs:
           EVENT="${{ github.event.action }}"
           if [ "$EVENT" = "enable-cli-released" ]; then
             echo "repo=aluminumio/enable-cli" >> $GITHUB_OUTPUT
-            echo "formula=Formula/enable.rb" >> $GITHUB_OUTPUT
-            echo "name=enable" >> $GITHUB_OUTPUT
-            echo "artifacts=enable-darwin-arm64 enable-linux-amd64" >> $GITHUB_OUTPUT
+            echo "formula=Formula/enbl.rb" >> $GITHUB_OUTPUT
+            echo "name=enbl" >> $GITHUB_OUTPUT
+            echo "artifacts=enbl-darwin-arm64 enbl-linux-amd64" >> $GITHUB_OUTPUT
           else
             echo "repo=aluminumio/rightsignals-cli" >> $GITHUB_OUTPUT
             echo "formula=Formula/rightsignals.rb" >> $GITHUB_OUTPUT
@@ -43,7 +43,6 @@ jobs:
             sed -i "/${artifact}/{ n; s/sha256 \".*\"/sha256 \"${sha}\"/; }" "$FORMULA"
           done
           sed -i "s/version \".*\"/version \"${VERSION}\"/" "$FORMULA"
-          # Also update download URLs to use new version
           sed -i "s|/download/v[^/]*/|/download/v${VERSION}/|g" "$FORMULA"
 
       - name: Commit and push
