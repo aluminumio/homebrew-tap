@@ -7,7 +7,7 @@ class Enbl < Formula
   on_macos do
     on_arm do
       url "https://github.com/aluminumio/enable-cli/releases/download/v0.2.0/enbl-darwin-arm64"
-      sha256 "placeholder"
+      sha256 "9225a55a54652405d8d0c33b8ecebc709bfd4ab66436fd301fe6a961d765c195"
 
       def install
         bin.install "enbl-darwin-arm64" => "enbl"
@@ -18,7 +18,7 @@ class Enbl < Formula
   on_linux do
     on_intel do
       url "https://github.com/aluminumio/enable-cli/releases/download/v0.2.0/enbl-linux-amd64"
-      sha256 "placeholder"
+      sha256 "5194b7b3d9a64ddeae9190da7736c17b2bea29961dcba21d7f246fa960f41cc2"
 
       def install
         bin.install "enbl-linux-amd64" => "enbl"
