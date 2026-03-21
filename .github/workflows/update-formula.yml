@@ -2,7 +2,7 @@ name: Update formula on CLI release
 
 on:
   repository_dispatch:
-    types: [cli-released]
+    types: [cli-released, enable-cli-released]
 
 jobs:
   update:
@@ -12,23 +12,47 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Determine formula details
+        id: meta
+        run: |
+          EVENT="${{ github.event.action }}"
+          if [ "$EVENT" = "enable-cli-released" ]; then
+            echo "repo=aluminumio/enable-cli" >> $GITHUB_OUTPUT
+            echo "formula=Formula/enable.rb" >> $GITHUB_OUTPUT
+            echo "name=enable" >> $GITHUB_OUTPUT
+            echo "artifacts=enable-darwin-arm64 enable-linux-amd64" >> $GITHUB_OUTPUT
+          else
+            echo "repo=aluminumio/rightsignals-cli" >> $GITHUB_OUTPUT
+            echo "formula=Formula/rightsignals.rb" >> $GITHUB_OUTPUT
+            echo "name=rightsignals" >> $GITHUB_OUTPUT
+            echo "artifacts=rightsignals-darwin-arm64 rightsignals-linux-amd64" >> $GITHUB_OUTPUT
+          fi
+
       - name: Download release artifacts and update formula
         env:
           GH_TOKEN: ${{ secrets.REPO_DISPATCH_TOKEN }}
           VERSION: ${{ github.event.client_payload.version }}
+          REPO: ${{ steps.meta.outputs.repo }}
+          FORMULA: ${{ steps.meta.outputs.formula }}
+          ARTIFACTS: ${{ steps.meta.outputs.artifacts }}
         run: |
-          for artifact in rightsignals-darwin-arm64 rightsignals-linux-amd64; do
-            url="https://github.com/aluminumio/rightsignals-cli/releases/download/v${VERSION}/${artifact}"
+          for artifact in $ARTIFACTS; do
+            url="https://github.com/${REPO}/releases/download/v${VERSION}/${artifact}"
             curl -sL "$url" -o "/tmp/${artifact}"
             sha=$(sha256sum "/tmp/${artifact}" | awk '{print $1}')
-            sed -i "/${artifact}/{ n; s/sha256 \".*\"/sha256 \"${sha}\"/; }" Formula/rightsignals.rb
+            sed -i "/${artifact}/{ n; s/sha256 \".*\"/sha256 \"${sha}\"/; }" "$FORMULA"
           done
-          sed -i "s/version \".*\"/version \"${VERSION}\"/" Formula/rightsignals.rb
+          sed -i "s/version \".*\"/version \"${VERSION}\"/" "$FORMULA"
+          # Also update download URLs to use new version
+          sed -i "s|/download/v[^/]*/|/download/v${VERSION}/|g" "$FORMULA"
 
       - name: Commit and push
+        env:
+          NAME: ${{ steps.meta.outputs.name }}
+          VERSION: ${{ github.event.client_payload.version }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Formula/rightsignals.rb
-          git commit -m "Update rightsignals to v${{ github.event.client_payload.version }}" || exit 0
+          git add -A
+          git commit -m "Update ${NAME} to v${VERSION}" || exit 0
           git push
