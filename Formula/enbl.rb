@@ -1,13 +1,13 @@
 class Enbl < Formula
   desc "CLI for the Enable AI workforce platform"
   homepage "https://github.com/aluminumio/enable-cli"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/aluminumio/enable-cli/releases/download/v0.3.1/enbl-darwin-arm64"
-      sha256 "f0aa71ae8c93156cef3ffaf6bbb3a33cff8268acbd12b6e158c3b45c83c69ef9"
+      url "https://github.com/aluminumio/enable-cli/releases/download/v0.3.2/enbl-darwin-arm64"
+      sha256 "07120943a8bbfe3519ea89c47efb4d0023fd5a02fd27fb11709bd03980c89405"
 
       def install
         bin.install "enbl-darwin-arm64" => "enbl"
@@ -17,8 +17,8 @@ class Enbl < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/aluminumio/enable-cli/releases/download/v0.3.1/enbl-linux-amd64"
-      sha256 "8e42af3034f716e1cf9de4644cd5da7bd0148b571f7cf2e898fdaeeb8e60691d"
+      url "https://github.com/aluminumio/enable-cli/releases/download/v0.3.2/enbl-linux-amd64"
+      sha256 "9a97d127101d6ca4887a40a7504ea0641d1c7ef12c345b6a700825bf66a2564c"
 
       def install
         bin.install "enbl-linux-amd64" => "enbl"
