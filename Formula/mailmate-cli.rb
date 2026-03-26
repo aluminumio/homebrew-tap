@@ -1,13 +1,13 @@
 class MailmateCli < Formula
   desc "CLI for MailMate — manage your physical mail from the terminal"
   homepage "https://github.com/Win-hhm/mailmate-cli"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/Win-hhm/mailmate-cli/releases/download/v0.1.0/mailmate-macos-arm64"
-      sha256 "687efd16ed761d37ee540c1c66db599896dea4a7c728a32f5fa4d6c4c9580ba6"
+      url "https://github.com/Win-hhm/mailmate-cli/releases/download/v0.1.1/mailmate-macos-arm64"
+      sha256 "5ee0cc47ba8fa7efbffe2323790133addad66fa0da2d09263b50308adfcbd728"
 
       def install
         bin.install "mailmate-macos-arm64" => "mailmate"
@@ -17,8 +17,8 @@ class MailmateCli < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/Win-hhm/mailmate-cli/releases/download/v0.1.0/mailmate-linux-x86_64"
-      sha256 "cb6f30db9fe3a4b9d93b1696a6a753f07d59c9ce7d79566a1df06b115fed2b6a"
+      url "https://github.com/Win-hhm/mailmate-cli/releases/download/v0.1.1/mailmate-linux-x86_64"
+      sha256 "73e662c32f23c47e53c09f9dc9a2024519e161bf55ec97f7eefed521df471929"
 
       def install
         bin.install "mailmate-linux-x86_64" => "mailmate"
