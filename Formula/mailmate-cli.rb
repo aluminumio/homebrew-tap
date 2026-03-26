@@ -1,4 +1,4 @@
-class Mailmate < Formula
+class MailmateCli < Formula
   desc "CLI for MailMate — manage your physical mail from the terminal"
   homepage "https://github.com/Win-hhm/mailmate-cli"
   version "0.1.0"
