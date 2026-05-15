@@ -2,7 +2,7 @@ name: Update formula on CLI release
 
 on:
   repository_dispatch:
-    types: [cli-released, enable-cli-released, rightdocuments-cli-released]
+    types: [cli-released, enable-cli-released, rightdocuments-cli-released, rightimaged-cli-released]
 
 jobs:
   update:
@@ -28,6 +28,12 @@ jobs:
               echo "formula=Formula/rightdocuments.rb" >> $GITHUB_OUTPUT
               echo "name=rightdocuments" >> $GITHUB_OUTPUT
               echo "artifacts=rightdocuments-darwin-arm64 rightdocuments-linux-x86_64" >> $GITHUB_OUTPUT
+              ;;
+            rightimaged-cli-released)
+              echo "repo=aluminumio/rightimaged-cli" >> $GITHUB_OUTPUT
+              echo "formula=Formula/rightimaged.rb" >> $GITHUB_OUTPUT
+              echo "name=rightimaged" >> $GITHUB_OUTPUT
+              echo "artifacts=rightimaged-darwin-arm64 rightimaged-linux-amd64" >> $GITHUB_OUTPUT
               ;;
             *)
               echo "repo=aluminumio/rightsignals-cli" >> $GITHUB_OUTPUT
