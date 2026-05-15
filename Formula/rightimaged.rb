@@ -1,13 +1,13 @@
 class Rightimaged < Formula
   desc "CLI for the RightImaged DICOM imaging platform"
   homepage "https://github.com/aluminumio/rightimaged-cli"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/aluminumio/rightimaged-cli/releases/download/v0.1.0/rightimaged-darwin-arm64"
-      sha256 "dd6bf3e0a72e110a51b6ffe56ac56716a8395d9cf9e708352bfac1540c42d5c0"
+      url "https://github.com/aluminumio/rightimaged-cli/releases/download/v0.2.0/rightimaged-darwin-arm64"
+      sha256 "c00784c2372c212f77c5a4b4143aef76f82dd3d8904bc17f3c2fcf9a25784a4e"
 
       def install
         bin.install "rightimaged-darwin-arm64" => "rightimaged"
@@ -17,8 +17,8 @@ class Rightimaged < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/aluminumio/rightimaged-cli/releases/download/v0.1.0/rightimaged-linux-amd64"
-      sha256 "6f8d15e8ad28d9462333c39941c1c2a222495c46255652d67314e5ef476d1dae"
+      url "https://github.com/aluminumio/rightimaged-cli/releases/download/v0.2.0/rightimaged-linux-amd64"
+      sha256 "c720c4ecec40637ee9acd66934731b7760b7dc55b5d7e23f7febd0f5d1afbe74"
 
       def install
         bin.install "rightimaged-linux-amd64" => "rightimaged"
