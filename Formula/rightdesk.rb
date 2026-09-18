@@ -1,12 +1,12 @@
 class Rightdesk < Formula
   desc "CLI for the RightDesk API"
   homepage "https://github.com/aluminumio/rightdesk-cli"
-  version "0.2.0"
+  version "0.3.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/aluminumio/rightdesk-cli/releases/download/v0.2.0/rd-darwin-arm64"
-      sha256 "41880f757a0bae4af1a20432cea5748213ce9256e181edfd5e2bcfaaf46879f9"
+      url "https://github.com/aluminumio/rightdesk-cli/releases/download/v0.3.0/rd-darwin-arm64"
+      sha256 "bd95c0e25155f596c006256a3d987b6fe30f1eff9c9e1b5919cd88415191ef0c"
 
       def install
         bin.install "rd-darwin-arm64" => "rd"
@@ -16,8 +16,8 @@ class Rightdesk < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/aluminumio/rightdesk-cli/releases/download/v0.2.0/rd-linux-x86_64"
-      sha256 "bb33adc594a45b5d8881b581bd60efb5b5ce69fbc09cb07512fb605bb1f5a4ae"
+      url "https://github.com/aluminumio/rightdesk-cli/releases/download/v0.3.0/rd-linux-x86_64"
+      sha256 "708bd642e2e28447dac4c206ca2c73e12b642551522d64529aa1bdfc5962c535"
 
       def install
         bin.install "rd-linux-x86_64" => "rd"
