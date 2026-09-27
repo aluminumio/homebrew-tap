@@ -5,13 +5,12 @@ class Enbl < Formula
   license "MIT"
 
   on_macos do
+    # The macOS binary links /opt/homebrew/opt/openssl@3 dynamically.
+    depends_on "openssl@3"
+
     on_arm do
       url "https://github.com/aluminumio/enable-cli/releases/download/v0.10.0/enbl-darwin-arm64"
       sha256 "9e79cd96ab30389c4455b5f9d7b08e722881e17ea419a3ac5d1dd944e7794549"
-
-      def install
-        bin.install "enbl-darwin-arm64" => "enbl"
-      end
     end
   end
 
@@ -19,11 +18,11 @@ class Enbl < Formula
     on_intel do
       url "https://github.com/aluminumio/enable-cli/releases/download/v0.10.0/enbl-linux-amd64"
       sha256 "a9e2475995ba5f11c47f70a1cce5c80264025bf4295545d2160f7555a858cd37"
-
-      def install
-        bin.install "enbl-linux-amd64" => "enbl"
-      end
     end
+  end
+
+  def install
+    bin.install Dir["enbl-*"].first => "enbl"
   end
 
   test do
