@@ -1,13 +1,13 @@
 class Rightdocuments < Formula
   desc "CLI for the RightDocuments API"
   homepage "https://github.com/aluminumio/rightdocuments-cli"
-  version "0.4.0"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.4.0/rightdocuments-darwin-arm64"
-      sha256 "8790583efd857466f09f90b7d1dd3f13dc2b6e5b3b8f659857e025ea8bfdc17a"
+      url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.5.1/rightdocuments-darwin-arm64"
+      sha256 "047535980c5a2af24b4ff9d72fe4d20f0b438ab5c9a308ac1f5eb2cf5df03f29"
 
       def install
         bin.install "rightdocuments-darwin-arm64" => "rightdocuments"
@@ -17,8 +17,8 @@ class Rightdocuments < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.4.0/rightdocuments-linux-x86_64"
-      sha256 "ef0fd7deb19f6393cf7f62b93fc2e2d1b7282304a63c6650301bcd2e97237d16"
+      url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.5.1/rightdocuments-linux-x86_64"
+      sha256 "d0220a82505f66ef0b315629bd705f5cf3ec1b884490a7324e26edb098e0900d"
 
       def install
         bin.install "rightdocuments-linux-x86_64" => "rightdocuments"
