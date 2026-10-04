@@ -1,7 +1,7 @@
 class Enbl < Formula
   desc "CLI for the Enable AI workforce platform"
   homepage "https://enable.io"
-  version "0.10.2"
+  version "0.11.0"
   license "MIT"
 
   on_macos do
@@ -9,15 +9,15 @@ class Enbl < Formula
     depends_on "openssl@3"
 
     on_arm do
-      url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.10.2/enbl-darwin-arm64"
-      sha256 "c59342aefd543d657f9a067c347462c26551c548161213ac9650d49dfa838191"
+      url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.11.0/enbl-darwin-arm64"
+      sha256 "05d9ae3d6238488eba46b21d1a17e18956dbd5f1ba87b865fa07c9559bf00811"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.10.2/enbl-linux-amd64"
-      sha256 "f6089451f22f8a54c9f0abbe386baac717d3c91a6a48ceebe5e23bf188564bb6"
+      url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.11.0/enbl-linux-amd64"
+      sha256 "6a4a6ab4152528f0905400096081019685a05d3cd8c35bcaaa7f0e29574b5efc"
     end
   end
 
