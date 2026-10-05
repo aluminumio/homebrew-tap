@@ -1,7 +1,7 @@
 class Enbl < Formula
   desc "CLI for the Enable AI workforce platform"
   homepage "https://enable.io"
-  version "0.14.1"
+  version "0.15.0"
   license "MIT"
 
   on_macos do
@@ -9,12 +9,12 @@ class Enbl < Formula
     depends_on "openssl@3"
 
     on_arm do
-      url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.14.1/enbl-darwin-arm64"
-      sha256 "3acd915f9d80a4feef71c320b659874f90a3ff0b201a63eae6511338bab8d6af"
+      url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.15.0/enbl-darwin-arm64"
+      sha256 "03e5e0ce575e8bdd7a7815395276343b66b9f5bfe7f504c2d3ea84ab41c3f055"
 
       # enbl-bar: the session sync in the menu bar.
       resource "enbl-bar" do
-        url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.14.1/enbl-bar-darwin-arm64"
+        url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.15.0/enbl-bar-darwin-arm64"
         sha256 "8e729fc6c217bca05b4f6c587d48abad13e6f7f27a3a564a9482697360f22e76"
       end
     end
@@ -22,8 +22,8 @@ class Enbl < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.14.1/enbl-linux-amd64"
-      sha256 "59e5e0b4b023a6f9d35cb679e8da17a710ea01186f2c5c701ac8633a8a0aa3b7"
+      url "https://github.com/aluminumio/homebrew-tap/releases/download/enbl-v0.15.0/enbl-linux-amd64"
+      sha256 "4ef530de49b0b83dc69c8ba8c54817c8eaeeb04e431e128dfb56beba6bf98048"
     end
   end
 
