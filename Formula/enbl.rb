@@ -36,6 +36,9 @@ class Enbl < Formula
   service do
     run opt_bin/"enbl-bar"
     keep_alive false
+    # A crash or a refusal to start leaves its reason here.
+    log_path var/"log/enbl-bar.log"
+    error_log_path var/"log/enbl-bar.log"
   end
 
   test do
