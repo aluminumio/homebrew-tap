@@ -24,7 +24,7 @@ jobs:
               echo "tag_prefix=enbl-v" >> $GITHUB_OUTPUT
               echo "formula=Formula/enbl.rb" >> $GITHUB_OUTPUT
               echo "name=enbl" >> $GITHUB_OUTPUT
-              echo "artifacts=enbl-darwin-arm64 enbl-linux-amd64" >> $GITHUB_OUTPUT
+              echo "artifacts=enbl-darwin-arm64 enbl-bar-darwin-arm64 enbl-linux-amd64" >> $GITHUB_OUTPUT
               ;;
             rightdocuments-cli-released)
               echo "repo=aluminumio/rightdocuments-cli" >> $GITHUB_OUTPUT
