@@ -2,7 +2,7 @@ name: Update formula on CLI release
 
 on:
   repository_dispatch:
-    types: [cli-released, enable-cli-released, rightdocuments-cli-released, rightimaged-cli-released, rightdesk-cli-released, rightrank-cli-released]
+    types: [cli-released, enable-cli-released, rightdocuments-cli-released, rightimaged-cli-released, rightdesk-cli-released, rightrank-cli-released, madslope-cli-released]
 
 jobs:
   update:
@@ -25,6 +25,15 @@ jobs:
               echo "formula=Formula/enbl.rb" >> $GITHUB_OUTPUT
               echo "name=enbl" >> $GITHUB_OUTPUT
               echo "artifacts=enbl-darwin-arm64 enbl-bar-darwin-arm64 enbl-linux-amd64" >> $GITHUB_OUTPUT
+              ;;
+            madslope-cli-released)
+              # madslope-cli is private: its release job uploads the binaries to this
+              # public repo, under madslope-v<version>.
+              echo "repo=aluminumio/homebrew-tap" >> $GITHUB_OUTPUT
+              echo "tag_prefix=madslope-v" >> $GITHUB_OUTPUT
+              echo "formula=Formula/madslope.rb" >> $GITHUB_OUTPUT
+              echo "name=madslope" >> $GITHUB_OUTPUT
+              echo "artifacts=madslope-darwin-arm64 madslope-linux-amd64" >> $GITHUB_OUTPUT
               ;;
             rightdocuments-cli-released)
               echo "repo=aluminumio/rightdocuments-cli" >> $GITHUB_OUTPUT
