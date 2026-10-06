@@ -10,14 +10,14 @@ class Madslope < Formula
 
     on_arm do
       url "https://github.com/aluminumio/homebrew-tap/releases/download/madslope-v0.1.0/madslope-darwin-arm64"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      sha256 "2adaf801d1a46ab2aa2bfd66472276fbc527f5eec8d5ed4104c61122573e692a"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/aluminumio/homebrew-tap/releases/download/madslope-v0.1.0/madslope-linux-amd64"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      sha256 "8ce22950695c143d206fcdb08f0ddff0951ab02aad9934191206251ef75d6416"
     end
   end
 
