@@ -1,7 +1,7 @@
 class Madslope < Formula
   desc "Make 10-second video ads with MadSlope from a terminal"
   homepage "https://www.madslope.com"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
@@ -9,15 +9,15 @@ class Madslope < Formula
     depends_on "openssl@3"
 
     on_arm do
-      url "https://github.com/aluminumio/homebrew-tap/releases/download/madslope-v0.2.0/madslope-darwin-arm64"
-      sha256 "3a62be48759514d343567b576d5fb668e024c1f384c71a60e18c1fd9d75053f0"
+      url "https://github.com/aluminumio/homebrew-tap/releases/download/madslope-v0.3.0/madslope-darwin-arm64"
+      sha256 "6ff45c7247a17f0cdc27f45d58b4511e80e9cb6b735157d002e044574f9b3c6b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/aluminumio/homebrew-tap/releases/download/madslope-v0.2.0/madslope-linux-amd64"
-      sha256 "2f746a65c9ecd2ea70b1a2961cc359ef92c89d1c4cd5e4b99a5cdd9ff765089c"
+      url "https://github.com/aluminumio/homebrew-tap/releases/download/madslope-v0.3.0/madslope-linux-amd64"
+      sha256 "cdafa3fd0c807a717d4481acd8d287484d111bfe2ea196f28257305c8a82efaf"
     end
   end
 
