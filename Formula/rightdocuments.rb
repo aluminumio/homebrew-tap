@@ -5,6 +5,12 @@ class Rightdocuments < Formula
   license "MIT"
 
   on_macos do
+    # Runtime libraries the macOS binary links (see otool -L in the CLI release job).
+    depends_on "bdw-gc"
+    depends_on "gmp"
+    depends_on "openssl@4"
+    depends_on "pcre2"
+
     on_arm do
       url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.16.1/rightdocuments-darwin-arm64"
       sha256 "3580e8d355cef23d1b6b3c22ece11bfc9700390549a1cc220585f4c2a8834be4"
