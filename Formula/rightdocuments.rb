@@ -1,7 +1,7 @@
 class Rightdocuments < Formula
   desc "CLI for the RightDocuments API"
   homepage "https://github.com/aluminumio/rightdocuments-cli"
-  version "0.16.1"
+  version "0.16.3"
   license "MIT"
 
   on_macos do
@@ -12,8 +12,8 @@ class Rightdocuments < Formula
     depends_on "pcre2"
 
     on_arm do
-      url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.16.1/rightdocuments-darwin-arm64"
-      sha256 "3580e8d355cef23d1b6b3c22ece11bfc9700390549a1cc220585f4c2a8834be4"
+      url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.16.3/rightdocuments-darwin-arm64"
+      sha256 "a0bbf28c486cbf4d13fa9f17102da78fef3ceafd00740803f7c5244f0d2c0d5e"
 
       def install
         bin.install "rightdocuments-darwin-arm64" => "rightdocuments"
@@ -23,8 +23,8 @@ class Rightdocuments < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.16.1/rightdocuments-linux-x86_64"
-      sha256 "a2da5db557cca4d611b4b647663b00ad58bd7326b8483615467dd7ae7159ed9f"
+      url "https://github.com/aluminumio/rightdocuments-cli/releases/download/v0.16.3/rightdocuments-linux-x86_64"
+      sha256 "9acfc9c1cf5184354b0db73a17e0be49ddbff48e834b36e912174d7e2c5d458d"
 
       def install
         bin.install "rightdocuments-linux-x86_64" => "rightdocuments"
